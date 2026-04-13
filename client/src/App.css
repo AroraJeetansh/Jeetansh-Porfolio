@@ -1,0 +1,234 @@
+.page {
+  --bg: #f7f7f5;
+  --text: #111;
+  --muted: #666;
+  --subtle: #888;
+  --border-soft: rgba(0, 0, 0, 0.04);
+  --border-footer: rgba(0, 0, 0, 0.06);
+  --icon: #222;
+  --icon-hover: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.page.dark {
+  --bg: #0f1115;
+  --text: #f2f3f5;
+  --muted: #b0b7c3;
+  --subtle: #94a0b3;
+  --border-soft: rgba(255, 255, 255, 0.09);
+  --border-footer: rgba(255, 255, 255, 0.12);
+  --icon: #d5d9e0;
+  --icon-hover: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.identity .name {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.identity .tagline {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border-footer);
+  background: transparent;
+  color: var(--text);
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(420px, 1.35fr);
+  gap: 2.5rem;
+  flex: 1;
+  max-width: 1200px;
+}
+
+.panel {
+  border: 1px solid var(--border-footer);
+  border-radius: 14px;
+  padding: 1.2rem 1.25rem;
+  background: transparent;
+}
+
+.column-header h2 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--subtle);
+  margin: 0 0 1.2rem;
+}
+
+.column-header:not(:first-child) {
+  margin-top: 1.8rem;
+}
+
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.item-row:last-of-type {
+  border-bottom: none;
+}
+
+.item-title {
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.experience-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.item-date {
+  font-size: 0.84rem;
+  color: var(--subtle);
+  white-space: nowrap;
+}
+
+.about-text {
+  margin: 0 0 1.3rem;
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.skills-row .item-row {
+  border-bottom: none;
+  padding: 0;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--border-footer);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  color: var(--text);
+}
+
+.skill-icon {
+  display: inline-flex;
+  font-size: 0.95rem;
+  color: var(--icon);
+}
+
+.detail-list {
+  margin: 0.45rem 0 0;
+  padding-left: 1rem;
+}
+
+.detail-item {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.header-contact-row {
+  margin-top: 0.9rem;
+  margin-bottom: 0;
+}
+
+.contact-row .item-row {
+  border-bottom: none;
+  padding: 0.1rem 0;
+}
+
+.contact-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: var(--icon);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.contact-icon-link:hover {
+  color: var(--icon-hover);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-footer);
+  font-size: 0.85rem;
+  color: var(--subtle);
+}
+
+@media (max-width: 960px) {
+  .page {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 100%;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+}
